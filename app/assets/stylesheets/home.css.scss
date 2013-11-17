@@ -1,6 +1,9 @@
 @import 'constants';
 @import 'utilities';
 
+html { overflow: hidden !important; }
+body { overflow: scroll !important; }
+
 body {
 	padding-top: 5em;
 	overflow-y: scroll;

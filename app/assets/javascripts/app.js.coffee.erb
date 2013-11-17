@@ -45,3 +45,6 @@ App.run ['$rootScope', '$location', \
   $rootScope.showSave = ->
     $location.path() == '/edit'
 ]
+
+$('body').on 'touchmove', (e) ->
+  if (!$('.scrollable').has($(e.target)).length) e.preventDefault()
