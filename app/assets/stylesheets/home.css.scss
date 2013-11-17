@@ -101,7 +101,7 @@ body {
   padding-top: $body-margin;
   z-index: 1031;
   @include transform($nav-width-desktops, 0);
-  background: #191818;
+  background: #2C2E3A;
 
   ul {
     border-top: 1px solid #333;
@@ -125,6 +125,7 @@ body {
 .fuckme {
   margin-left: -$nav-width-desktops;
   width: $nav-width-desktops;
+  height: 100%;
 
   @include respond-to(handhelds) { width: $nav-width-handhelds; margin-left: -$nav-width-handhelds; }
   @include respond-to(tablets) { width: $nav-width-tablets; margin-left: -$nav-width-tablets; }
@@ -196,8 +197,10 @@ body {
     a {
       border: none;
       white-space: normal;
-      padding: 0.6em 0 0.6em 0.6em;
-      color: #aaa;
+      padding: 0.6em 0 0.6em 1.8em;
+      font-size: 1.1em;
+      font-weight: 200;
+      color: #C2C2C2;
     }
   }
 }
