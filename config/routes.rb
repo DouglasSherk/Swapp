@@ -11,6 +11,7 @@ Swapp::Application.routes.draw do
     get 'notifications' => 'home#index', :as => 'templates_notifications'
     get 'settings' => 'home#index', :as => 'templates_settings'
     get 'collections/:id' => 'home#index', :as => 'templates_collections'
+    get 'faq' => 'home#index', :as => 'templates_faq'
   end
 
   root 'home#index'
