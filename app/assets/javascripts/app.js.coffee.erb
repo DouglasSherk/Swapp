@@ -32,4 +32,7 @@ App.run ['$rootScope', '$location', \
 
   $rootScope.menuShouldShow = ->
     return $rootScope._showMenu
+
+  $rootScope.showEdit = ->
+    $location.path() == '/pickups' || $location.path() == ''
 ]

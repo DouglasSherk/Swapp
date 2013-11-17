@@ -39,8 +39,9 @@
   <div class="layout" data-ng-class="{'active': menuShouldShow()}">
     <div class="navbar navbar-default navbar-fixed-top" data-ng-class="{'active': menuShouldShow()}">
       <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="" data-ng-click="mainMenuLinkClick()"><%= fa_icon "bars" %></a>
+        <div class="navbar-header" style="position: relative;">
+          <a class="navbar-brand" style="position: absolute; top: 0; left: 10px;" href="" data-ng-click="mainMenuLinkClick()"><%= fa_icon "bars" %></a>
+          <a class="navbar-brand pretty" ng-if="showEdit()" style="position: absolute; top: 0; right: 10px;" href="#/edit">Edit</a>
         </div>
       </div>
     </div>
