@@ -21,6 +21,18 @@ App.controller 'SearchCtrl', ['$scope', 'WasteItems', ($scope, WasteItems) ->
     if elem && $scope.query
       elem.name.toLowerCase().indexOf($scope.query.toLowerCase()) != -1
 
+  $scope.matchQuality = (elem) ->
+    name = elem.name.toLowerCase()
+    query = $scope.query.toLowerCase()
+    i = name.indexOf(query)
+    left = i - 1
+    while left >= 0 && name[left] != ' '
+      left -= 1
+    right = i + query.length
+    while right < name.length && name[right] != ' '
+      right += 1
+    (i - left) * (right - i - query.length + 1)
+
   $scope.toggle = (id) ->
     div = $(".waste-category.#{id}")
     caret = div.find('.glyphicon')

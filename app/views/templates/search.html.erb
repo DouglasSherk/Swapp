@@ -30,7 +30,7 @@
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
         <ul id="item-search">
-          <li class="item-result" ng-repeat="item in items | filter:matchQuery" ng-click="navigate()">
+          <li class="item-result" ng-repeat="item in items | filter:matchQuery | orderBy:matchQuality" ng-click="navigate()">
             {{ item.name }}
             <div class="pull-right">
               <i class="fa fa-fw {{ icon[item.category] }}"></i>
