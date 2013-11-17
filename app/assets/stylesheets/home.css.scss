@@ -89,6 +89,7 @@ body {
   @include transition();
 
   left: 0;
+  height: 100%;
 
   padding-top: $body-margin;
   z-index: 1031;
