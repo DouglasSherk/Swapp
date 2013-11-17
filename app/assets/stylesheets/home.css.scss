@@ -221,3 +221,9 @@ body {
     padding-right: 0px;
   }
 }
+
+#main {
+  @include transition();
+
+  width: 100%;
+}
