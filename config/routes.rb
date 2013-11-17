@@ -4,6 +4,7 @@ Swapp::Application.routes.draw do
   scope :templates do
     get '' => 'home#index', :as => 'templates'
     get 'pickups' => 'home#index', :as => 'templates_pickups'
+    get 'edit' => 'home#index', :as => 'templates_edit'
     get 'search' => 'home#index', :as => 'templates_search'
     get 'contact' => 'home#index', :as => 'templates_contact'
     get 'calendar' => 'home#index', :as => 'templates_calendar'

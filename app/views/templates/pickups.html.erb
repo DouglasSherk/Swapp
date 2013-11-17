@@ -7,30 +7,36 @@
     <span class="glyphicon glyphicon-chevron-right pull-right"></span>
   </div>
 
-  <h4 class="text-center category__header">Upcoming pickups</h3>
-
   <div class="row">
+    <h4 class="col-sm-8 col-sm-offset-2 text-center category__header">Upcoming pickups</h3>
+  </div>
+
+  <div class="row" ng-show="active('recycle')">
     <div class="col-sm-8 col-sm-offset-2 waste-category recycle" click-href="#/collections/Recyclable">
      <span class='cat__name'>Recycling</span> <div class='category__date recycle__date'>Nov 19</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" ng-show="active('yard')">
     <div class="col-sm-8 col-sm-offset-2 waste-category yard" click-href="#/collections/Yard%20Waste">
      <span class='cat__name'>Yard Waste</span> <div class='category__date yard__date'>Nov 24</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
-  <h4 class="text-center category__header">Drop off dates</h3>
+
   <div class="row">
+    <h4 class="col-sm-8 col-sm-offset-2 text-center category__header">Drop off dates</h3>
+  </div>
+
+  <div class="row" ng-show="active('hazard')">
     <div class="col-sm-8 col-sm-offset-2 waste-category hazard" click-href="#/collections/Hazardous%20Waste">
      <span class='cat__name'>Hazardous Materials</span> <div class='category__date hazard__date'>Dec 3</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" ng-show="active('dropoff')">
     <div class="col-sm-8 col-sm-offset-2 waste-category garbage" click-href="#/collections/Garbage">
       <span class='cat__name'>Large items</span> <div class='category__date garbage__date'>Any</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>

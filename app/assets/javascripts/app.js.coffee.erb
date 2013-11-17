@@ -36,4 +36,6 @@ App.run ['$rootScope', '$location', \
 
   $rootScope.showEdit = ->
     $location.path() == '/pickups' || $location.path() == ''
+  $rootScope.showSave = ->
+    $location.path() == '/edit'
 ]

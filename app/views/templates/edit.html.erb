@@ -1,0 +1,49 @@
+<div id="main" data-ng-controller="PickupsCtrl">
+  <div class="row">
+    <h4 class="col-sm-8 col-sm-offset-2 text-center category__header">Notifications</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 waste-category garbage" ng-click="toggle('garbage')">
+     <span class='cat__name'>Garbage</span>
+     <span class="fa fa-fw {{ active('garbage') ? 'fa-check-circle-o' : 'fa-circle-o' }} pull-right"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 waste-category recycle" ng-click="toggle('recycle')">
+     <span class='cat__name'>Recycling</span>
+     <span class="fa fa-fw {{ active('recycle') ? 'fa-check-circle-o' : 'fa-circle-o' }} pull-right"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 waste-category yard" ng-click="toggle('yard')">
+     <span class='cat__name'>Yard Waste</span>
+     <span class="fa fa-fw {{ active('yard') ? 'fa-check-circle-o' : 'fa-circle-o' }} pull-right"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 waste-category hazard" ng-click="toggle('hazard')">
+     <span class='cat__name'>Hazardous Materials</span>
+     <span class="fa fa-fw {{ active('hazard') ? 'fa-check-circle-o' : 'fa-circle-o' }} pull-right"></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 waste-category garbage" ng-click="toggle('dropoff')">
+     <span class='cat__name'>Large items & drop-off</span>
+     <span class="fa fa-fw {{ active('dropoff') ? 'fa-check-circle-o' : 'fa-circle-o' }} pull-right"></span>
+    </div>
+  </div>
+
+  <!-- <div class="wastetype">
+    <div class="garbage">
+
+    </div>
+    <div class="info">
+      Garbage!
+    </div>
+  </div> -->
+</div>
