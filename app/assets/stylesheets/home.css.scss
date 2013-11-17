@@ -60,7 +60,11 @@ body {
 }
 
 .notification {
-  border-left: 10px solid #776633;
+  border-left: 10px solid #ff8888;
+}
+
+.notification-new {
+ border-left: 10px solid red;
 }
 
 #mainMenuLink {
