@@ -1,9 +1,6 @@
 @import 'constants';
 @import 'utilities';
 
-html { overflow: hidden !important; }
-body { overflow: scroll !important; }
-
 body {
 	padding-top: 5em;
 	overflow-y: scroll;
@@ -210,6 +207,7 @@ body {
 }
 
 .layout {
+  padding-bottom: 3em;
   @include respond-to(handhelds) {
     padding-left: 0;
     padding-right: 0;
