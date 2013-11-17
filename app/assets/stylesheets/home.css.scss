@@ -125,10 +125,19 @@ body {
   overflow-y: auto;
   -webkit-overflow-scroll: touch;
 
-  a { width: 100% !important; }
+  a {
+    width: 100% !important;
+    color: #aaa !important;
+    background: transparent !important;
+  }
 
   li {
     width: 100% !important;
+
+    &.active a {
+      color: #eee !important;
+      background: #1f8dd6 !important;
+    }
   }
 
   ul {
