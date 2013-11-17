@@ -1,6 +1,21 @@
 @import '../shared/constants';
 @import '../shared/utilities';
 
+.center {
+  text-align: center;
+}
+
 #main {
   padding-top: 60px;
+}
+
+#location {
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+button.submit {
+  width: 100px;
 }

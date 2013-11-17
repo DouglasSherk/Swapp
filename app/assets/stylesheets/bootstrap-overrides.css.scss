@@ -1,1 +1,13 @@
 @import 'twitter/bootstrap';
+@import 'shared/constants';
+@import 'shared/utilities';
+
+body {
+  font-family: 'ProximaNova', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  @include respond-to(handhelds) { font-size: 12px; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'ProximaNova', 'Helvetica Neue', sans-serif;
+}

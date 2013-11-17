@@ -1,5 +1,26 @@
 <div id="main" class="container" data-ng-controller="HomeCtrl">
-  <h1>Swapp</h1>
+  <div class="center">
+    <h1>Swapp</h1>
 
-  <button class="btn btn-success">Use my location</button>
+    <br />
+
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div id="location" class="col-sm-6">
+        <button class="btn btn-success" ng-click="locate()"><i class="fa fa-location-arrow"></i> Use my location</button>
+        <input class="form-control" type="text" placeholder="123 Main Street"></input>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+
+    <br />
+
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <button class="submit btn btn-primary" ng-click="submit()">Submit</button>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+  </div>
 </div>
