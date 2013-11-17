@@ -46,10 +46,10 @@
         <a class="navbar-brand pretty" ng-if="showEdit()" style="position: absolute; top: 0; right: 10px;" href="#/edit">Edit</a>
         <a class="navbar-brand pretty" ng-if="showSave()" style="position: absolute; top: 0; right: 10px;" href="#/pickups">Save</a>
         <div class="navbar-header" style="position: relative;">
-          <div class="notification-count" style="position: absolute; top: 8px; left: 32px; color: red; z-index: 999"
+          <div class="notification-count" style="position: absolute; top: 8px; left: 32px; color: #db4c4c; z-index: 999"
                ng-show="unread() > 0">
             <i class="fa fa-circle" style="font-size: 16px"></i>
-            <span style="color: white; position: relative; top: -2px; left: -14px; font-size: 11px; font-weight: bold">{{ unread() }} </span>
+            <span style="color: white; position: relative; top: -2px; left: -13px; font-size: 11px; font-weight: bold">{{ unread() }} </span>
           </div>
           <a class="navbar-brand" style="position: absolute; top: 0; left: 10px;" href="" data-ng-click="mainMenuLinkClick()"><%= fa_icon "bars" %></a>
         </div>
