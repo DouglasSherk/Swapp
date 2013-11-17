@@ -224,6 +224,12 @@ body {
   }
 }
 
+.collections {
+  @include respond-to(handhelds) {
+    padding: 20px;
+  }
+}
+
 
 
 .glyphicon{
@@ -285,6 +291,7 @@ h2 .glyphicon{
   position: absolute;
   right: 50px;
   width: 59px;
+  font-size: 15px;
   text-align: center;
   padding: 3px 3px;
   color: #FFF;
