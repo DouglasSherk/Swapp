@@ -33,11 +33,17 @@ App.controller 'SearchCtrl', ['$scope', 'WasteItems', ($scope, WasteItems) ->
       right += 1
     (i - left) * (right - i - query.length + 1)
 
-  $scope.toggle = (id) ->
+  $scope.toggleCategory = (id) ->
     div = $(".waste-category.#{id}")
     caret = div.find('.glyphicon')
     caret.toggleClass('glyphicon-chevron-right glyphicon-chevron-down')
     $(".waste-category-list.#{id}").toggleClass('hide')
+    return null
+
+  $scope.toggleItem = (id) ->
+    div = $("[data-toggle=\"#{id}\"")
+    div.parent().find('[class*=fa-chevron]').toggleClass('fa-chevron-right fa-chevron-down')
+    div.toggleClass('hide')
     return null
 
   $scope.itemsByCategory = {}

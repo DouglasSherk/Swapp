@@ -12,7 +12,7 @@
 
   <div ng-repeat="cat in categories" ng-hide="query">
     <div class="row text-center">
-      <div class="waste-category col-sm-6 col-sm-offset-3 {{ cat.id }}" ng-click="toggle(cat.id)">
+      <div class="waste-category col-sm-6 col-sm-offset-3 {{ cat.id }}" ng-click="toggleCategory(cat.id)">
         <span>{{ cat.name }}</span>
         <span class="glyphicon glyphicon-chevron-right pull-right"></span>
       </div>
@@ -30,11 +30,15 @@
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
         <ul id="item-search">
-          <li class="item-result" ng-repeat="item in items | filter:matchQuery | orderBy:matchQuality" ng-click="navigate()">
+          <li class="item-result" ng-repeat="item in items | filter:matchQuery | orderBy:matchQuality" ng-click="toggleItem(item.name)">
             {{ item.name }}
             <div class="pull-right">
               <i class="fa fa-fw {{ icon[item.category] }}"></i>
-              <i class="fa fa-chevron-right"></i>
+              <i class="fa fa-fw fa-chevron-right"></i>
+            </div>
+            <div class="details hide" data-toggle="{{ item.name }}">
+              This is a <b>{{ item.category.toLowerCase() }}</b> item.<br />
+              For more details on {{ item.category.toLowerCase() }} items, <a href="#/collections/{{ item.category }}">click here</a>.
             </div>
           </li>
         </ul>
