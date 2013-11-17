@@ -32,5 +32,5 @@ App.controller 'HomeCtrl', ['$scope', '$location', '$timeout', '$rootScope', 'Se
     navigator.geolocation.getCurrentPosition (position) =>
       $scope.submit()
       arrow.toggleClass('fa-location-arrow fa-spin fa-spinner')
-      $scope.$digest()
+      $scope.$apply()
 ]
