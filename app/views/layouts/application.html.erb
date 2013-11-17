@@ -41,7 +41,7 @@
 </head>
 <body>
   <div class="layout" data-ng-class="{'active': menuShouldShow()}">
-    <div class="navbar navbar-default navbar-fixed-top" data-ng-class="{'active': menuShouldShow()}">
+    <div class="navbar navbar-default navbar-fixed-top" ng-show="notHome()" data-ng-class="{'active': menuShouldShow()}">
       <div class="container">
         <div class="navbar-header" style="position: relative;">
           <a class="navbar-brand" style="position: absolute; top: 0; left: 10px;" href="" data-ng-click="mainMenuLinkClick()"><%= fa_icon "bars" %></a>

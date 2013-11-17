@@ -38,8 +38,10 @@ App.run ['$rootScope', '$location', \
   $rootScope.menuShouldShow = ->
     return $rootScope._showMenu
 
+  $rootScope.notHome = ->
+    $location.path().length > 1
   $rootScope.showEdit = ->
-    $location.path() == '/pickups' || $location.path() == ''
+    $location.path() == '/pickups'
   $rootScope.showSave = ->
     $location.path() == '/edit'
 ]
