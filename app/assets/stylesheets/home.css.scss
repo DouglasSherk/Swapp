@@ -27,6 +27,10 @@ body {
 	font-size: 1.25em;
 	border-top: 1px solid #D8D8D8;
   border-bottom: 1px solid #D8D8D8;
+
+  .fa-circle-o, .fa-check-circle-o {
+    margin-right: 15px;
+  }
 }
 
 
@@ -34,11 +38,6 @@ body {
 	background: #f2f4f4;
 	padding: 10px;
 }
-
-
-
-
-
 
 .garbage {
 	border-left: 10px solid black;
