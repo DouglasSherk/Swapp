@@ -1,7 +1,10 @@
 <div id="main" data-ng-controller="PickupsCtrl">
-  <div class="alert alert-info" ng-hide="hideAlert">
-    <a class="close pull-right" data-dismiss="alert" ng-click="actuallyHideAlert()">&times;</a>
-    Leaf and Yard waste collection will be extended for 1 week! Collection will be on your normally scheduled garbage day Nov 18-22 city wide.
+  <div class="alert alert-info home-alert" ng-hide="hideAlert">
+    <%= fa_icon 'exclamation' %>
+    <div>
+      <a class="close pull-right" ng-click="actuallyHideAlert()">&times;</a>
+      <div style="padding-right: 20px">Leaf and Yard waste collection will be extended for 1 week! Collection will be on your normally scheduled garbage day Nov 18-22 city wide.</div>
+    </div>
   </div>
 
   <div class="next" click-href="#/collections/Garbage" style="cursor: pointer">

@@ -3,6 +3,7 @@ App.controller 'PickupsCtrl', ['$scope', 'Settings', ($scope, Settings) ->
 
   $scope.actuallyHideAlert = ->
     Settings.hideAlert = true
+    $('.home-alert').hide()
     Settings.save()
 
   $scope.active = (id) ->
