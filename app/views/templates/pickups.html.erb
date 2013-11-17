@@ -1,5 +1,9 @@
 <div id="main" data-ng-controller="PickupsCtrl">
-  <!--<div class="alert alert-danger">Attention! Expected severe weather may delay garbage pickups. Stay tuned for more information ...</div>-->
+  <div class="alert alert-info" ng-hide="hideAlert">
+    <a class="close pull-right" data-dismiss="alert" ng-click="actuallyHideAlert()">&times;</a>
+    Leaf and Yard waste collection will be extended for 1 week! Collection will be on your normally scheduled garbage day Nov 18-22 city wide.
+  </div>
+
   <div class="next" click-href="#/collections/Garbage" style="cursor: pointer">
     <h3 class='garbage__title'>Next:</h3>
     <h2 class='garbage__sub'>Garbage collection</h2>

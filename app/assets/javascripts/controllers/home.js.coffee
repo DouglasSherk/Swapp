@@ -6,6 +6,9 @@ App.controller 'HomeCtrl', ['$scope', '$location', '$timeout', '$rootScope', 'Se
   $scope.finish = ->
     $location.path('/pickups')
 
+  Settings.hideAlert = false
+  Settings.save()
+
   $scope.submit = ->
     #Settings.locationSaved = true
     #Settings.save()
