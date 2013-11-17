@@ -13,6 +13,11 @@ body {
   font-family: 'ProximaNova', 'Helvetica Neue', sans-serif;
   font-size: 15px;
   @include respond-to(handhelds) { font-size: 12px; }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
