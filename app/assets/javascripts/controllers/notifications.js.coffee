@@ -11,6 +11,7 @@ App.controller 'NotificationsCtrl', ['$scope', 'Settings', ($scope, Settings) ->
     setTimeout ->
       $scope.notifications.splice(0, 0, {time: Date.now(), message: 'Hey, Sorry for your trouble. We\'ll send someone to pick up your garbage as soon as we can. - management'})
       Settings.save()
+      $scope.$apply()
     , 2000
 
   $scope.$on '$destroy', ->
