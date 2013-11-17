@@ -31,6 +31,14 @@ body {
 	padding: 10px;
 }
 
+.category__date{
+  display: inline;
+  position: absolute;
+  right: 50px;
+}
+
+
+
 .garbage {
 	border-left: 10px solid black;
 }
@@ -194,8 +202,8 @@ body {
 
 .layout {
   @include respond-to(handhelds) {
-    padding-left: $collapsed-nav-width;
-    padding-right: $collapsed-nav-width;
+    padding-left: 0;
+    padding-right: 0;
 
     &.active #main {
       @include transform($nav-width-handhelds, 0);
@@ -221,3 +229,31 @@ body {
     padding-right: 0px;
   }
 }
+
+
+.glyphicon{
+  right: 10px !important;
+}
+
+.category__header{
+  text-align: left !important;
+  position: relative;
+  right: -22px;
+}
+
+.recycle .cat__name{
+  color: #3079b6;
+}
+
+.yard .cat__name{
+  color: #30b67f;
+}
+
+.hazard .cat__name{
+  color: #e99144;
+}
+
+.yard .cat__name{
+  color: #30b67f;
+}
+
