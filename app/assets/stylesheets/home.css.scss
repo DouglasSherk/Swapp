@@ -188,3 +188,33 @@ body {
     }
   }
 }
+
+.layout {
+  @include respond-to(handhelds) {
+    padding-left: $collapsed-nav-width;
+    padding-right: $collapsed-nav-width;
+
+    &.active #main {
+      @include transform($nav-width-handhelds, 0);
+    }
+  }
+
+  @include respond-to(tablets) {
+    padding-left: $collapsed-nav-width;
+    padding-right: $collapsed-nav-width;
+
+    &.active #main {
+      @include transform($nav-width-tablets, 0);
+    }
+  }
+
+  @include respond-to(desktops) {
+    padding-left: $nav-width-desktops;
+    padding-right: 0px;
+  }
+
+  @include respond-to(widescreens) {
+    padding-left: $nav-width-widescreens;
+    padding-right: 0px;
+  }
+}

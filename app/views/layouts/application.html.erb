@@ -36,27 +36,34 @@
   <meta name="author" content="">
 </head>
 <body>
-  <div class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">SWAPP</a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li ng-class="{'active': isActiveMenu(menuItem.link)}" ng-repeat="menuItem in menuItems">
-            <a href="#{{ menuItem.link }}">{{ menuItem.name }}</a>
-          </li>
-        </ul>
+  <div class="layout">
+    <a href="" id="mainMenuLink" class="pure-menu-link" data-ng-click="mainMenuLinkClick()"
+    data-ng-class="{'active': menuShouldShow()}" data-ng-show="isLoggedIn">
+      <i data-ng-show="!loading" class="fa fa-reorder fa-2x fa-fixed-width"></i>
+      <i data-ng-show="loading" class="fa fa-spinner fa-spin fa-2x fa-fixed-width"></i>
+    </a>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SWAPP</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{'active': isActiveMenu(menuItem.link)}" ng-repeat="menuItem in menuItems">
+              <a href="#{{ menuItem.link }}">{{ menuItem.name }}</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div id="view" data-ng-view="">
+    <div id="view" data-ng-view="">
+    </div>
   </div>
 </body>
 </html>
