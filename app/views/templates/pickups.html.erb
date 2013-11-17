@@ -1,4 +1,5 @@
 <div id="main" class="container" data-ng-controller="PickupsCtrl">
+  <!--<div class="alert alert-danger">Attention! Expected severe weather may delay garbage pickups. Stay tuned for more information ...</div>-->
   <div class="next text-center">
     <h3>Next pickup time</h3>
     <h2>7am, Thurs Dec 21</h2>
@@ -6,6 +7,13 @@
   </div>
 
   <h4 class="text-center text-muted">Upcoming pickups</h3>
+
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2 recycle">
+     <span>7am, Thurs Dec 27 :: Recycle</span>
+     <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 garbage">
@@ -16,7 +24,7 @@
 
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 hazard">
-     <span>7am, Mon Dec 24 :: Hazard</span>
+     <span>7am, Mon Dec 24 :: Hazardous Materials</span>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
@@ -27,14 +35,6 @@
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 recycle">
-     <span>7am, Thurs Dec 27 :: Recycle</span>
-     <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-    </div>
-  </div>
-
 
   <!-- <div class="wastetype">
     <div class="garbage">
