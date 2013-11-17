@@ -74,21 +74,15 @@ body {
   i {
     width: auto;
   }
-
-  &.active {
-    // This doesn't show up on anything other than handhelds and mobile.
-    @include transform($nav-width-handhelds, 0);
-    @include respond-to(tablets) { @include transform($nav-width-tablets, 0); }
-  }
 }
 
-.nav {
+.fuckme {
   @include transition();
 
   left: 0;
 
   padding-top: $body-margin;
-  z-index: 1004;
+  z-index: 1031;
   @include transform($nav-width-desktops, 0);
   background: #191818;
 
@@ -111,7 +105,7 @@ body {
   }
 }
 
-.nav {
+.fuckme {
   margin-left: -$nav-width-desktops;
   width: $nav-width-desktops;
 
@@ -143,7 +137,6 @@ body {
   ul {
     li {
       font-size: 100%;
-      @include respond-to(tablets) { font-size: 125%; }
 
       a:hover {
         background-color: #333;
@@ -226,4 +219,13 @@ body {
   @include transition();
 
   width: 100%;
+}
+
+.navbar {
+  @include transition();
+  &.active {
+    // This doesn't show up on anything other than handhelds and mobile.
+    @include transform($nav-width-handhelds, 0);
+    @include respond-to(tablets) { @include transform($nav-width-tablets, 0); }
+  }
 }
