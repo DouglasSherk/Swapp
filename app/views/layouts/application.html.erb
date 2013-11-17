@@ -19,6 +19,10 @@
     }
   </script>
 
+  <link rel="apple-touch-icon" href="img/icon.png" />
+  <link rel="apple-touch-icon" size="72x72" href="img/icon.png" />
+  <link rel="apple-touch-icon" size="114x114" href="img/icon.png" />
+
   <% if Rails.env.phonegap? || Rails.env.phonegap_staging? %>
     <% phonegapAllTemplates.each do |path, content| %>
       <script type="text/ng-template" id="<%= path %>">
