@@ -36,7 +36,7 @@
 }
 
 body {
-  font-family: 'ProximaNova', 'Helvetica Neue', sans-serif;
+  font-family: 'ProximaNova', 'Helvetica Neue', sans-serif !important;
   font-size: 15px;
   @include respond-to(handhelds) { font-size: 12px; }
 }

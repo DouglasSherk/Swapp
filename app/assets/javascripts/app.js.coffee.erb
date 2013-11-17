@@ -1,6 +1,6 @@
 <% environment.context_class.instance_eval { include AngularRoutingHelper } %>
 
-window.App = angular.module('Swapp', ['ngResource'])
+window.App = angular.module('Swapp', ['ngResource', 'ngRoute'])
 
 App.config ['$routeProvider', ($routeProvider) ->
   <% getAllAngularRoutes().each do |route| %>

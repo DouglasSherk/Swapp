@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html data-ng-app="Swapp">
 <head>
-  <title>Swapp</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-
-  <meta name="HandheldFriendly" content="true" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Stratford Waste App</title>
+  <% if Rails.env.phonegap? || Rails.env.phonegap_staging? %>
+    <% # XXX: These will have already been minified by the PhoneGap build path. %>
+    <link href="css/application.css" media="all" rel="stylesheet" />
+    <script src="js/application.js"></script>
+    <script src="cordova.js"></script>
+  <% else %>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <% end %>
+  <script>
+    if (navigator.app) {
+      navigator.app.clearCache();
+    }
+  </script>
 
   <% if Rails.env.phonegap? || Rails.env.phonegap_staging? %>
     <% phonegapAllTemplates.each do |path, content| %>
@@ -17,6 +25,12 @@
       </script>
     <% end %>
   <% end %>
+
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="">
+  <meta name="author" content="">
 </head>
 <body>
   <div class="navbar navbar-default navbar-fixed-top">

@@ -1,4 +1,4 @@
-class App::TemplatesController < ApplicationController
+class TemplatesController < ApplicationController
   # TODO: Come back to this later.
   #include ActionController::Caching
   #caches_page :page

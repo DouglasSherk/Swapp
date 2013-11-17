@@ -1,4 +1,4 @@
-App.controller 'HomeCtrl', ['$scope',\
-                            ($scope) ->
-  $scope.test = 1
+App.controller 'HomeCtrl', ['$scope', 'Settings', \
+                            ($scope, Settings) ->
+  $scope.test = Settings.test
 ]
