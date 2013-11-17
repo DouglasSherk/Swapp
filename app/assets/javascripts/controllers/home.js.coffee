@@ -10,19 +10,21 @@ App.controller 'HomeCtrl', ['$scope', '$location', '$timeout', 'Settings', \
     #Settings.locationSaved = true
     #Settings.save()
     $scope.submitted = true
-    $('#map-canvas').html('')
     pos = new google.maps.LatLng(43.3679493, -80.9818108)
-    mapOptions = {
-      zoom: 17,
-      center: pos,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    marker = new google.maps.Marker({
-      position: pos,
-      map: map,
-      title: 'Your Location'
-    });
+    if !$scope.googlemap
+      mapOptions = {
+        zoom: 17,
+        center: pos,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      $scope.googlemap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      marker = new google.maps.Marker({
+        position: pos,
+        map: $scope.googlemap,
+        title: 'Your Location'
+      });
+    else
+      $scope.googlemap.setCenter(pos)
 
   $scope.locate = ->
     arrow = $('#location .fa-location-arrow')
