@@ -40,7 +40,7 @@
   <meta name="author" content="">
 </head>
 <body class="scrollable">
-  <div class="layout" data-ng-class="{'active': menuShouldShow()}">
+  <div class="layout" data-ng-class="{'active': menuShouldShow(), 'fsbackground': isLandingPage()}">
     <div class="navbar navbar-default navbar-fixed-top" ng-show="notHome()" data-ng-class="{'active': menuShouldShow()}">
       <div class="container">
         <a class="navbar-brand pretty" ng-if="showEdit()" style="position: absolute; top: 0; right: 10px;" href="#/edit">Edit</a>

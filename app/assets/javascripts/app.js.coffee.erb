@@ -42,6 +42,9 @@ App.run ['$rootScope', '$location', 'Settings', \
   $rootScope.menuItemClick = ->
     $rootScope._showMenu = false
 
+  $rootScope.isLandingPage = ->
+    $location.path() == '' && !$rootScope.submitted
+
   $rootScope.menuShouldShow = ->
     return $rootScope._showMenu
 

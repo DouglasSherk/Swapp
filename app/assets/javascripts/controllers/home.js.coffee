@@ -1,5 +1,5 @@
-App.controller 'HomeCtrl', ['$scope', '$location', '$timeout', 'Settings', \
-                            ($scope, $location, $timeout, Settings) ->
+App.controller 'HomeCtrl', ['$scope', '$location', '$timeout', '$rootScope', 'Settings', \
+                            ($scope, $location, $timeout, $rootScope, Settings) ->
   if Settings.locationSaved
     $location.path('/pickups')
 
@@ -9,7 +9,7 @@ App.controller 'HomeCtrl', ['$scope', '$location', '$timeout', 'Settings', \
   $scope.submit = ->
     #Settings.locationSaved = true
     #Settings.save()
-    $scope.submitted = true
+    $rootScope.submitted = true
     pos = new google.maps.LatLng(43.3679493, -80.9818108)
     if !$scope.googlemap
       mapOptions = {
