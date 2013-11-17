@@ -1,4 +1,4 @@
-App.controller 'NotificationsCtrl', ['$scope', 'Settings', ($scope, Settings) ->
+App.controller 'NotificationsCtrl', ['$scope', '$rootScope', 'Settings', ($scope, $rootScope, Settings) ->
   $scope.notifications = (Settings.notifications ||= [])
 
   $scope.markRead = ->
