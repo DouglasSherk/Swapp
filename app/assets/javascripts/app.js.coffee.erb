@@ -25,6 +25,11 @@ App.run ['$rootScope', '$location', 'Settings', \
     {name: 'Settings', link: '/settings'}
   ]
 
+  $rootScope.title = ''
+  $rootScope.setTitle = (title) ->
+    $rootScope.title = title
+    null
+
   $rootScope.unread = ->
     unread = 0
     if Settings.notifications
