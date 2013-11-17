@@ -13,6 +13,17 @@ App.config ['$routeProvider', ($routeProvider) ->
     reloadOnSearch: false,
 ]
 
-App.run ['$rootScope',\
-         ($rootScope) ->
+App.run ['$rootScope', '$location', \
+         ($rootScope, $location) ->
+  $rootScope.menuItems = [
+    {name: 'Pickups', link: '/pickups'},
+    {name: 'What goes where?', link: '/search'},
+    {name: 'FAQ', link: '/faq'},
+    {name: 'Contact', link: '/contact'},
+    {name: 'Settings', link: '/settings'}
+  ]
+
+  $rootScope.isActiveMenu = (path) ->
+    return $location.path().indexOf(path) == 0 ||
+           path == '/pickups' && $location.path().length <= 1
 ]
