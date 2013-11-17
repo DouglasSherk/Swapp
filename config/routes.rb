@@ -1,5 +1,7 @@
 Swapp::Application.routes.draw do
 
+  get 'pickups' => 'home#pickups'
+
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
