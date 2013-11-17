@@ -27,8 +27,9 @@ App.run ['$rootScope', '$location', 'Settings', \
 
   $rootScope.unread = ->
     unread = 0
-    for note in Settings.notifications
-      unread += 1 if !note.read
+    if Settings.notifications
+      for note in Settings.notifications
+        unread += 1 if !note.read
     unread
 
   $rootScope.isActiveMenu = (path) ->
