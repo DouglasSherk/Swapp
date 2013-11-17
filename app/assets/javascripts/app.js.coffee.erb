@@ -47,4 +47,5 @@ App.run ['$rootScope', '$location', \
 ]
 
 $('body').on 'touchmove', (e) ->
-  if (!$('.scrollable').has($(e.target)).length) e.preventDefault()
+  if !$('.scrollable').has($(e.target)).length
+    e.preventDefault()
