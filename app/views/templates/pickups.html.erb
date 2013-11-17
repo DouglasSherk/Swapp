@@ -1,37 +1,38 @@
 <div id="main" data-ng-controller="PickupsCtrl">
   <!--<div class="alert alert-danger">Attention! Expected severe weather may delay garbage pickups. Stay tuned for more information ...</div>-->
-  <div class="next text-center">
-    <h3>Next pickup time</h3>
-    <h2>Thurs Dec 21</h2>
-    <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+  <div class="next">
+    <h3 class='garbage__title'>Next:</h3>
+    <h2 class='garbage__sub'>Garbage collection</h2>
+    <h2 class='garbage__sub garage__sub__date'>Mon, November 18</h2>
+    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
   </div>
 
-  <h4 class="text-center text-muted category__header">Upcoming pickups</h3>
+  <h4 class="text-center category__header">Upcoming pickups</h3>
 
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 waste-category recycle">
-     <span class='cat__name'>Recycling</span> <div class='category__date'>Nov 19</div>
+     <span class='cat__name'>Recycling</span> <div class='category__date recycle__date'>Nov 19</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 waste-category yard">
-     <span class='cat__name'>Yard Waste</span> <div class='category__date'>Nov 24</div>
+     <span class='cat__name'>Yard Waste</span> <div class='category__date yard__date'>Nov 24</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
-  <h4 class="text-center text-muted category__header">Drop off dates</h3>
+  <h4 class="text-center category__header">Drop off dates</h3>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 waste-category hazard">
-     <span class='cat__name'>Hazardous Materials</span> <div class='category__date'>Dec 3</div>
+     <span class='cat__name'>Hazardous Materials</span> <div class='category__date hazard__date'>Dec 3</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>
 
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2 waste-category garbage">
-      <span class='cat__name'>Large items</span> <div class='category__date'>Any</div>
+      <span class='cat__name'>Large items</span> <div class='category__date garbage__date'>Any</div>
      <span class="glyphicon glyphicon-chevron-right pull-right"></span>
     </div>
   </div>

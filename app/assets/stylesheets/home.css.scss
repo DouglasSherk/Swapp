@@ -8,34 +8,35 @@ body {
 
 .next {
 	border: 1px solid #ccc;
-	margin-bottom: 3em;
-	width: 75%;
+	margin-bottom: 1.7em;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
 	padding-top: 2em;
 	padding-bottom: 2em;
+  padding-left: 22px;
+  background-color: #5B7489;
+  color: #FFF;
 }
 
 .waste-category {
-	background: #F2F4F4;
+	background: #FFF;
 	height: 3.5em;
 	padding-top: 1em;
 	padding-left: 2em;
 	font-size: 1.25em;
-	margin-top: 0.5em;
+	border-top: 1px solid #D8D8D8;
+  border-bottom: 1px solid #D8D8D8;
 }
+
 
 .waste-category-list {
 	background: #f2f4f4;
 	padding: 10px;
 }
 
-.category__date{
-  display: inline;
-  position: absolute;
-  right: 50px;
-}
+
+
 
 
 
@@ -227,12 +228,24 @@ body {
 
 .glyphicon{
   right: 10px !important;
+  color: #AFAFAF;
+  font-size: 13px;
+}
+
+h2 .glyphicon{
+  color: #FFF;
+  font-size: 15px;
 }
 
 .category__header{
   text-align: left !important;
   position: relative;
-  right: -22px;
+  right: -9px;
+  color: #2D4961;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  top: 3px;
+  padding-top: 10px;
 }
 
 .recycle .cat__name{
@@ -247,9 +260,58 @@ body {
   color: #e99144;
 }
 
-.yard .cat__name{
-  color: #30b67f;
+.garbage .cat__name{
+  color: #735f82;
 }
+
+.yard__date{
+  background-color: #30b67f;
+}
+
+.hazard__date{
+  background-color: #e99144;
+}
+
+.recycle__date{
+  background-color: #3079b6;
+}
+
+.garbage__date{
+  background-color: #735f82;
+}
+
+.category__date{
+  display: inline;
+  position: absolute;
+  right: 50px;
+  width: 59px;
+  text-align: center;
+  padding: 3px 3px;
+  color: #FFF;
+}
+
+.garbage__title{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+.garbage__sub{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.9em;
+  font-weight: 300;
+}
+
+.garage__sub__date{
+  font-weight: bold;
+  font-weight: 400;
+}
+
+
+
+
 
 
 #main {
