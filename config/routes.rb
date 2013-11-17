@@ -4,58 +4,44 @@ Swapp::Application.routes.draw do
 
   root 'home#index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  scope :app do
+    get '' => 'home#app', :as => 'app_root'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+    get 'templates/:path.html' => 'app/templates#page', :constraints => { :path => /.+/ }, :as => 'app_templates_show'
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    scope :templates do
+      get '' => 'home#app', :as => 'app_templates'
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+      # Don't include "template" in these :as paths as it is overly verbose.
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+      scope :clients do
+        get '' => 'home#app', :as => 'app_clients'
+        get 'new' => 'home#app', :as => 'app_clients_new'
+        get 'recent' => 'home#app', :as => 'app_clients_recent'
+        get 'show/:clientId' => 'home#app', :as => 'app_clients_show'
+        get 'edit/:clientId' => 'home#app', :as => 'app_clients_edit'
+        get 'edit/:clientId/location/' => 'home#app', :as => 'app_clients_new_location'
+        get 'edit/:clientId/location/:locationId' => 'home#app', :as => 'app_clients_edit_location'
+        get 'templates/:clientId' => 'home#app', :as => 'app_clients_templates'
+        get 'notfound' => 'home#app', :as => 'app_clients_notfound'
+      end
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+      scope :auth do
+        get '' => 'home#app', :as => 'app_auth'
+        get 'login' => 'home#app', :as => 'app_auth_login'
+        get 'sign_up' => 'home#app', :as => 'app_auth_sign_up'
+        get 'forbidden' => 'home#app', :as => 'app_auth_forbidden'
+        get 'reset_password' => 'home#app', :as => 'app_auth_reset_password'
+      end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+      scope :brokerage do
+        get 'index' => 'home#app', :as => 'app_brokerage'
+        get 'stats' => 'home#app', :as => 'app_brokerage_stats'
+      end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-  
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+      scope :users do
+        get 'show/:userId' => 'home#app', :as => 'app_users_show'
+      end
+    end
+  end
 end

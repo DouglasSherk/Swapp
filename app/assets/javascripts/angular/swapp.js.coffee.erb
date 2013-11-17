@@ -1,0 +1,85 @@
+<% environment.context_class.instance_eval { include AngularRoutingHelper } %>
+
+window.App = angular.module('Swapp', ['ngResource'])
+
+App.config ['$routeProvider', ($routeProvider) ->
+  <% getAllAngularRoutes().each do |route| %>
+  $routeProvider.when '<%= angularRouteAppPath(route).sub '#', '' %>',
+    templateUrl: '<%= angularRouteFilePath(route) %>',
+    reloadOnSearch: false,
+    # HACK: 'defer' the route change so the loading indicator has a chance to appear.
+    <% if angularRouteAppPath(route)['/clients/edit'] %>
+    resolve:
+      defer: ['$q', ($q) ->
+        defer = $q.defer()
+        setTimeout (-> defer.resolve()), 0
+        return defer.promise
+      ]
+    <% end %>
+  <% end %>
+  $routeProvider.otherwise
+    templateUrl: '<%= angularRouteFilePath(app_templates_path) %>',
+    reloadOnSearch: false,
+]
+
+App.run ['$rootScope', '$location', '$timeout',\
+         ($rootScope, $location, $timeout) ->
+  $rootScope.isLoggedIn = true
+  $rootScope._curMenuItem = null
+  $rootScope._curSubMenuItem = null
+  $rootScope._showMenu = false
+  $rootScope._showSubMenu = false
+
+  $rootScope.updateMenu = ->
+    $rootScope.menuItems = [
+      name: 'Home',
+      link: '/index'
+    ]
+    $rootScope.menuItems.push(
+      name: 'My Account',
+      link: '/users/show/profile'
+    )
+
+  $rootScope.updateMenu()
+
+  $rootScope.menuItemIsCaretExpanded = (path) ->
+    return $rootScope._curMenuItem == path and $rootScope._showSubMenu
+
+  $rootScope.menuShouldShow = ->
+    return $rootScope._showMenu
+
+  $rootScope.menuItemSelect = (path, subMenu) ->
+    if $rootScope._curMenuItem == path and $rootScope._showSubMenu
+      $rootScope._curMenuItem = null
+    else
+      $rootScope._curMenuItem = path
+    if (not $rootScope._showSubMenu = subMenu?) && path?
+      $rootScope._showMenu = false
+      $location.url(path)
+
+  $rootScope.menuItemIsSelected = (path) ->
+    regex = /(\/)index+$/
+    location = $location.path().replace regex, ''
+    if path == $rootScope.menuItems[0].link or path == '/'
+      return location == $rootScope.menuItems[0].link or location == ''
+    else
+      path = path.replace regex, ''
+      return location.substr(0, path.length) == path
+
+  $rootScope.subMenuItemSelect = (path) ->
+    $rootScope._showSubMenu = false
+    $rootScope._showMenu = false
+    if $rootScope._curSubMenuItem == path
+      $rootScope._curSubMenuItem = null
+    else
+      $rootScope._curSubMenuItem = path
+
+  $rootScope.subMenuShouldShow = (path) ->
+    return $rootScope._curMenuItem == path and $rootScope._showSubMenu
+
+  $rootScope.subMenuItemIsSelected = (path) ->
+    return $location.path().substr(0, path.length) == path
+
+  $rootScope.mainMenuLinkClick = ->
+    $rootScope._showMenu = !$rootScope._showMenu
+]

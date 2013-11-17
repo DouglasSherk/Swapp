@@ -1,0 +1,25 @@
+@import '../shared/constants';
+@import '../shared/utilities';
+
+body {
+  .login {
+    margin: auto;
+    max-width: 600px;
+    width: 80%;
+    display: block;
+
+    .login-buttons {
+      margin-top: 15px;
+      text-align: right;
+      float: right;
+      button {
+        @include respond-to(handhelds) {
+          display: inline-block;
+        }
+      }
+    }
+    .login-extra-buttons {
+      margin-top: 30px;
+    }
+  }
+}

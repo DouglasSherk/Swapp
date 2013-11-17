@@ -1,0 +1,518 @@
+@import 'constants';
+@import 'utilities';
+
+// This is no longer valid and will need to be changed to be hardware accelerated in the future.
+//.subnav {
+//  @include transition();
+//
+//  padding-top: 70px;
+//  z-index: 1003;
+//  left: $nav-width-desktops;
+//  background: #212020;
+//
+//  .pure-menu ul {
+//    // Hack to get menu elements to line up correctly with .nav
+//    border-top: 1px solid rgba(0, 0, 0, 0);
+//  }
+//
+//  &.active {
+//    left: 2*$nav-width-desktops;
+//  }
+//
+//  @include respond-to(handhelds) {
+//    left: 0;
+//    &.nav-active {
+//      left: $nav-width-handhelds;
+//    }
+//    &.active {
+//      left: 2*$nav-width-handhelds;
+//    }
+//  }
+//  @include respond-to(tablets) {
+//    left: 0;
+//    &.nav-active {
+//      left: $nav-width-tablets;
+//    }
+//    &.active {
+//      left: 2*$nav-width-tablets;
+//    }
+//  }
+//}
+
+.nav {
+  @include transition();
+
+  left: 0;
+
+  padding-top: $body-margin;
+  z-index: 1004;
+  @include transform($nav-width-desktops, 0);
+  background: #191818;
+
+  .pure-menu ul {
+    border-top: 1px solid #333;
+  }
+
+  @include respond-to(handhelds) {
+    @include transform(0, 0);
+    &.active {
+      @include transform($nav-width-handhelds, 0);
+    }
+  }
+
+  @include respond-to(tablets) {
+    @include transform(0, 0);
+    &.active {
+      @include transform($nav-width-tablets, 0);
+    }
+  }
+}
+
+.nav, .subnav {
+  margin-left: -$nav-width-desktops;
+  width: $nav-width-desktops;
+
+  @include respond-to(handhelds) { width: $nav-width-handhelds; margin-left: -$nav-width-handhelds; }
+  @include respond-to(tablets) { width: $nav-width-tablets; margin-left: -$nav-width-tablets; }
+  @include respond-to(desktops) { width: $nav-width-desktops; margin-left: -$nav-width-desktops }
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scroll: touch;
+
+  .pure-menu {
+    ul {
+      li {
+        font-size: 100%;
+        @include respond-to(tablets) { font-size: 125%; }
+
+        a:hover {
+          background-color: #333;
+        }
+
+        &.menu-item-divided {
+          border-top: 1px solid #333;
+        }
+
+        &.pure-menu-selected, &.pure-menu-selected a:hover {
+          background: #1f8dd6;
+          a {
+            color: #fff;
+          }
+        }
+
+        i {
+          float: right;
+          margin-right: 0.6em;
+          line-height: inherit;
+        }
+      }
+    }
+  }
+
+  .pure-menu-open {
+    background: transparent;
+    border: 0;
+    color: #999;
+
+    .pure-menu-heading {
+      font-size: 125%;
+      @include respond-to(tablets) { font-size: 140%; }
+
+      color: #fff;
+      text-transform: none;
+      padding: 0 0 0 0.43em;
+      margin: 0;
+      line-height: 50px;
+      height: 50px;
+    }
+
+    a {
+      border: none;
+      white-space: normal;
+      padding: 0.6em 0 0.6em 0.6em;
+      color: #aaa;
+    }
+  }
+}
+
+button, input, select, textarea {
+  font-family: "ProximaNova";
+}
+
+.pure-form-aligned {
+  $label-width: 10em;
+  $label-margin: 1em;
+  $dropdown-width: 10em;
+  // XXX: Where does this come from? Oh well.
+  $label-comfort-margin: 1em;
+  $dropdown-comfort-margin: 0.6em;
+  // TODO: This is bad and we should look into it.
+  $dropdown-comfort-antimargin-lowres: 0.2em;
+
+  .pure-form-fields {
+    display: table;
+    width: 100%;
+    border-spacing: 3px;
+    @include respond-to(handhelds) { border-spacing: 0 3px; }
+
+    .pure-control-group {
+      display: table-row;
+
+      @include respond-to(handhelds) {
+        display: block;
+      }
+
+      * {
+        margin: 3px;
+      }
+
+      label {
+        padding-right: 10px;
+        position: relative;
+        display: table-cell;
+        @include respond-to(handhelds) { display: table-row; }
+      }
+
+      input[type="text"], input[type="email"], input[type="password"], input[type="currency"], input[type="phone"] {
+        display: table-cell;
+        width: 100%;
+      }
+
+      input, select, textarea {
+        @include respond-to(handhelds) { display: table-row; margin: 3px 0; }
+      }
+
+      input[readonly], textarea[readonly], select[readonly] {
+        border: 1px solid #ccc;
+        box-shadow: none;
+        background-color: transparent;
+        color: black;
+      }
+
+      select[readonly] {
+        border: 1px solid #ccc;
+      }
+
+      // Text areas do not get formatted by pure, the styling below is
+      // obtained from the styling pure uses for text inputs.
+      textarea {
+        // Custom styles.
+        resize: none;
+        padding: 0.5em;
+        width: 100%;
+        display: table-cell;
+
+        border: 1px solid #ccc;
+        font-size: 0.8em;
+        box-shadow: inset 0 1px 3px #ddd;
+        @include border-radius(4px);
+        -webkit-transition: .3s linear border;
+        transition: .3s linear border;
+        @include box-sizing(border-box);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      > span {
+        margin: 0;
+      }
+
+      .error-tooltip-container {
+        position: relative;
+        margin: 0;
+      }
+
+      .error-tooltip {
+        display: none;
+        margin: 0;
+
+        @include respond-to(handhelds) {
+          color: red;
+          padding-bottom: 0.5em;
+        }
+
+        @include respond-to(tablets, desktops, widescreens) {
+          position: absolute;
+          z-index: 100;
+          bottom: 1em;
+          left: 6em;
+          width: 200px;
+          padding: 7px;
+          text-align: left;
+          font-size: .875em;
+          border-radius: 3px;
+          color: white;
+          background: #D33;
+        }
+      }
+
+      .error-tooltip::before {
+        @include respond-to(tablets, desktops, widescreens) {
+          content: "\25BC";
+          position: absolute;
+          bottom: -11px;
+          right: 6px;
+          color: #D33;
+        }
+      }
+
+
+      &:first-child {
+        .error-tooltip {
+          @include respond-to(tablets, desktops, widescreens) {
+            top: 2em;
+            bottom: auto;
+          }
+        }
+        .error-tooltip::before {
+          @include respond-to(tablets, desktops, widescreens) {
+            content: "\25B2";
+            top: -11px;
+            bottom: auto;
+          }
+        }
+      }
+
+      .error-tooltip:not(:empty) {
+        display: block;
+      }
+
+      .heading {
+        display: inline-block;
+        margin-top: 1em;
+        font-weight: bold;
+        color: #777;
+
+        @include respond-to(handhelds) {
+          display: table-row;
+        }
+      }
+
+      hr {
+        margin: 1em 0;
+      }
+    }
+  }
+
+  .dropdown-container {
+    display: inline-block;
+    width: 100%;
+    margin: 0 !important;
+
+    .dropdown-field {
+      display: table-row;
+      border-spacing: 0;
+      width: 100%;
+
+      @include respond-to(handhelds) { display: table-row; }
+
+      .dropdown-list {
+        min-width: $dropdown-width;
+        margin: 0;
+        @include box-sizing(content-box);
+        display: table-cell;
+
+        &.other-dropdown {
+          width: $dropdown-width;
+
+          &[readonly] {
+            display: none;
+
+            + .other-field {
+              input {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+
+      .other-field {
+        display: table-cell;
+        margin-left: $label-comfort-margin;
+        width: 100%;
+
+        input {
+          margin: 0 0 0 6px;
+          @include respond-to(handhelds) { margin: 0; }
+        }
+      }
+    }
+  }
+
+  .checkbox-container {
+    display: inline-block;
+
+    @include respond-to(handhelds) { display: table-row; }
+
+    .checkbox-field {
+      display: inline-block;
+      margin: 0px 4px;
+
+      .checkbox-label {
+        margin: 0px 2px 0px 4px;
+        display: inline;
+      }
+    }
+    .checkbox-field:hover {
+      cursor: default;
+    }
+  }
+
+  .units-container {
+    display: inline-block;
+    width: 100%;
+    margin: 0 !important;
+
+    .units-field {
+      display: table-row;
+      border-spacing: 0;
+      width: 100%;
+
+      @include respond-to(handhelds) { display: table-row; }
+
+      .text-field {
+        display: table-cell;
+        width: 100%;
+
+        input {
+          margin: 0;
+          @include border-radius(3px 0 0 3px);
+        }
+      }
+
+      select {
+        width: 10em;
+        height: 14px;
+        margin: 0 0 0 -3px;
+        display: table-cell;
+
+        @include box-sizing(content-box);
+        @include border-radius(0 3px 3px 0);
+
+        &.changed {
+          margin-left: 3px;
+        }
+      }
+    }
+  }
+}
+
+body {
+  .pure-button-xsmall {
+    font-size: 70%;
+  }
+
+  .pure-button-small {
+    font-size: 85%;
+  }
+
+  .pure-button-large {
+    font-size: 110%;
+  }
+
+  .pure-button-xlarge {
+    font-size: 125%;
+  }
+
+  .pure-button-2x {
+    font-size: 200%;
+  }
+
+  .pure-button-fixed-width {
+    width: 300px;
+  }
+
+  .pure-button {
+    //background: rgb(76, 180, 71); /* this is a green */
+  }
+
+  .pure-button-info,
+  .pure-button-success,
+  .pure-button-error,
+  .pure-button-warning,
+  .pure-button-secondary {
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  }
+
+  .pure-button-info {
+    background: #444;
+  }
+
+  .pure-button-success {
+    background: rgb(76, 180, 71); /* this is a green */
+  }
+
+  .pure-button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+  }
+
+  .pure-button-warning {
+    background: orange;
+  }
+
+  .pure-button-secondary {
+    background: #3A98AB;
+  }
+
+  .pure-button-tiny {
+    padding: 2px 8px;
+  }
+
+  h3 {
+    @include respond-to(handhelds) {
+      margin-bottom: 0.7em;
+    }
+  }
+
+  .pure-icon {
+    padding: 0;
+    border: none;
+
+    &, &:hover {
+      color: #666;
+      background-color: transparent;
+      background-image: none;
+    }
+  }
+}
+
+.pure-table {
+  .actions {
+    padding-left: 0px;
+    .pure-button {
+      margin: 3px 0 3px 0; // so buttons stack nicely
+      width: 20px;
+    }
+  }
+}
+
+.pure-table-full-width {
+  width: 100%;
+}
+
+input[readonly], textarea[readonly], select[readonly] {
+  border: 1px solid transparent !important;
+}
+
+select[readonly] {
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  background: transparent !important;
+  outline: none !important;
+  padding: 3px;
+
+  // XXX: HACK HACK HACK! Prevent the dropdown arrow from showing up in Firefox and IE.
+  width: 1000%;
+}
+
+@-moz-document url-prefix() {
+  select[readonly] {
+    margin-left: -3px !important;
+  }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html data-ng-app="Swapp">
+<head>
+  <title>Swapp</title>
+  <% if Rails.env.phonegap? || Rails.env.phonegap_staging? %>
+    <% # XXX: These will have already been minified by the PhoneGap build path. %>
+    <link href="css/application.css" media="all" rel="stylesheet" />
+    <script src="js/application.js"></script>
+    <script src="cordova.js"></script>
+  <% else %>
+    <%= stylesheet_link_tag "angular", media: "all" %>
+    <%= csrf_meta_tags %>
+    <%= javascript_include_tag "angular" %>
+  <% end %>
+  <script>
+    if (navigator.app) {
+      navigator.app.clearCache();
+    }
+  </script>
+
+  <% if Rails.env.phonegap? || Rails.env.phonegap_staging? %>
+    <% phonegapAllTemplates.each do |path, content| %>
+      <script type="text/ng-template" id="<%= path %>">
+       <%= raw content %>
+      </script>
+    <% end %>
+  <% end %>
+
+  <meta name="HandheldFriendly" content="true" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="description" content="">
+  <meta name="author" content="">
+</head>
+<body data-ng-click="menuItemSelect(null)">
+  <header>
+  </header>
+  <div class="pure-g-r" data-ng-class="{'active': menuShouldShow(), 'layout': isLoggedIn}">
+    <a href="" id="mainMenuLink" class="pure-menu-link" data-ng-click="mainMenuLinkClick()"
+       data-ng-class="{'active': menuShouldShow()}" data-ng-show="isLoggedIn">
+      <i data-ng-show="!loading" class="icon-reorder icon-2x icon-fixed-width"></i>
+      <i data-ng-show="loading" class="icon-spinner icon-spin icon-2x icon-fixed-width"></i>
+    </a>
+    <div class="nav pure-u" data-ng-class="{'active': menuShouldShow()}" data-ng-show="isLoggedIn">
+      <div class="pure-menu pure-menu-open">
+        <a class="pure-menu-heading">Swapp <i data-ng-show="loading" class="loading-icon icon-spinner icon-spin icon-fixed-width"></i></a>
+        <ul>
+          <li data-ng-repeat="menuItem in menuItems"
+              data-ng-class="{'pure-menu-selected': menuItemIsSelected(menuItem.link)}">
+            <a href="" data-ng-click="menuItemSelect(menuItem.link, menuItem.subMenuItems)" eat-click>
+              {{ menuItem.name }}
+              <i data-ng-class="{'icon-caret-down': menuItemIsCaretExpanded(menuItem.link), 'icon-caret-right': !menuItemIsCaretExpanded(menuItem.link)}"
+                 data-ng-show="menuItem.subMenuItems != null">
+              </i>
+            </a>
+          </li>
+          <li class="menu-item-divided"><a href="" data-ng-click="logout()" eat-click>Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="subnav pure-u" data-ng-repeat="menuItem in menuItems"
+         data-ng-class="{'nav-active': menuShouldShow(), 'active': subMenuShouldShow(menuItem.link)}"
+         data-ng-show="isLoggedIn">
+      <div class="pure-menu pure-menu-open">
+        <ul>
+          <li data-ng-repeat="subMenuItem in menuItem.subMenuItems"
+              data-ng-class="{'pure-menu-selected': subMenuItemIsSelected(menuItem.link + subMenuItem.link)}">
+            <a href="#{{ menuItem.link }}{{ subMenuItem.link }}"
+               data-ng-click="subMenuItemSelect(menuItem.link + subMenuItem.link)" eat-click>
+              {{ subMenuItem.name }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="view" data-ng-view="">
+    </div>
+  </div>
+  <footer>
+  </footer>
+</body>
+</html>
