@@ -29,7 +29,9 @@ body {
   border-bottom: 1px solid #D8D8D8;
 
   .fa-circle-o, .fa-check-circle-o {
-    margin-right: 15px;
+    margin-right: 20px;
+    font-size: 1.5em;
+    color: #589FEC;
   }
 }
 
@@ -199,7 +201,7 @@ body {
       border: none;
       white-space: normal;
       padding: 0.6em 0 0.6em 1.8em;
-      font-size: 1.1em;
+      font-size: 1.2em;
       font-weight: 200;
       color: #C2C2C2;
     }
@@ -362,4 +364,25 @@ h2 .glyphicon{
 
 .pretty {
   color: #08c !important;
+}
+
+.text-white{
+  color: #FFF;
+}
+
+.submit__address{
+  background-color: #FFF;
+  color: #428BCA;
+}
+
+.spacer{
+  padding-top: 150px;
+}
+
+.fsbackground{
+  background-image: url("../img/location_bg.jpg");
+  height: 568px;
+  width: 320px;
+  position: absolute;
+  top: 0;
 }

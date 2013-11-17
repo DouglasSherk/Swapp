@@ -1,7 +1,6 @@
 <div id="main" data-ng-controller="HomeCtrl">
   <div class="center" ng-hide="submitted">
-    <h1 class='location__image'></h1>
-
+    <div class='spacer'></div>
     <br />
 
     <div class="row">
@@ -9,7 +8,7 @@
       <div id="location" class="col-sm-6">
         <button class="btn btn-success" ng-click="locate()"><i class="fa fa-location-arrow"></i> Use my location</button>
         <hr class="soften" />
-        <span class="text-muted center">- OR -</span>
+        <span class="text-white center">- OR ENTER YOUR ADDRESS-</span>
         <br>
         <br>
         <input class="form-control enter__adresss" type="text" placeholder="1234 Main Street"></input>
@@ -22,7 +21,7 @@
     <div class="row">
       <div class="col-sm-3"></div>
       <div class="col-sm-6">
-        <button class="submit btn btn-primary" ng-click="submit()">Submit</button>
+        <button class="submit submit__address btn btn-primary" ng-click="submit()">ENTER</button>
       </div>
       <div class="col-sm-3"></div>
     </div>
@@ -47,3 +46,4 @@
     </div>
   </div>
 </div>
+
