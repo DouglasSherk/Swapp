@@ -6,6 +6,7 @@ Swapp::Application.routes.draw do
     get 'pickups' => 'home#index', :as => 'templates_pickups'
     get 'search' => 'home#index', :as => 'templates_search'
     get 'contact' => 'home#index', :as => 'templates_contact'
+    get 'calendar' => 'home#index', :as => 'templates_calendar'
     get 'collections/:id' => 'home#index', :as => 'templates_collections'
   end
 
