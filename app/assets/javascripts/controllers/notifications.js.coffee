@@ -14,8 +14,9 @@ App.controller 'NotificationsCtrl', ['$scope', 'Settings', ($scope, Settings) ->
     , 2000
 
   $scope.$on '$destroy', ->
-    $scope.markRead()
-    Settings.save()
+    if $rootScope.title == 'City Alerts'
+      $scope.markRead()
+      Settings.save()
 
   $scope.clear = ->
     angular.copy([], $scope.notifications)

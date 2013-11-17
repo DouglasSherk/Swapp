@@ -2,7 +2,7 @@
 
 <div id="main" class="container notifications" data-ng-controller="NotificationsCtrl">
   <div class="row">
-    <h3 class="col-sm-8 col-sm-offset-2">{{ unread() > 0 ? "#{unread()} New" : null }}</h3>
+    <h3 class="col-sm-8 col-sm-offset-2">{{ unread() > 0 ? unread() + " New" : null }}</h3>
   </div>
 
   <br />
