@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns = "http://www.w3.org/ns/widgets"
   xmlns:gap = "http://phonegap.com/ns/1.0"
-  id        = "com.scigit.consilium"
+  id        = "com.animals.swapp"
   versionCode="10"
   version   = "1.0.0">
 
   <!-- versionCode is optional and Android only -->
 
-  <name>Consilium</name>
+  <name>Swapp</name>
 
   <description>
-    Mobile data entry for insurance brokers.
+    City of Statford Waste App
   </description>
 
-  <author href="https://scigit.com" email="eric@scigit.com">
-    SciGit Inc.
+  <author href="http://animals-swapp.herokuapp.com" email="doug@sherk.me">
+    The Animals
   </author>
-
-  <access origin="http://consilium.scigit.com" />
-  <access origin="https://consilium.scigit.com" />
-  <access origin="http://consilium-staging.scigit.com" />
-  <access origin="https://consilium-staging.scigit.com" />
 
   <feature name="Camera">
     <param name="android-package" value="org.apache.cordova.CameraLauncher" />
@@ -29,9 +24,6 @@
   <feature name="NetworkStatus">
     <param name="android-package" value="org.apache.cordova.NetworkManager" />
     <param name="ios-package" value="CDVConnection" />
-  </feature>
-  <feature name="Downloader">
-    <param name="android-package" value="com.scigit.plugins.Downloader" />
   </feature>
 
   <plugin name="SQLitePlugin" value="org.pgsqlite.SQLitePlugin"/>

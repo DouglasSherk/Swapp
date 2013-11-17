@@ -20,7 +20,7 @@ module PhonegapTemplateCachingHelper
     end
 
     def phonegapTemplatePath(f)
-      "app/templates/#{File.path(f).sub(/\.erb/, '')}"
+      "templates/#{File.path(f).sub(/\.erb/, '')}"
     end
 
     def phonegapTemplateContent(f)
