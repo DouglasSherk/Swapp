@@ -11,9 +11,9 @@ module AngularRoutingHelper
     Rails.application.routes.routes.each do |route|
       path = angularRouteRawPath(route.path.spec.to_s)
 
-      if path.start_with?(app_root_path) &&
-         path != (app_templates_path + '/:path.html') &&
-         path != app_root_path
+      if path.start_with?(root_path) &&
+         path != (templates_path + '/:path.html') &&
+         path != root_path
         routes.push path
       end
     end
@@ -22,7 +22,7 @@ module AngularRoutingHelper
   end
 
   def angularRouteAppPath(route)
-    ('#' + route).sub(app_templates_path.sub(/\s*\(.+\)$/, ''), '') + ((route != app_templates_path && isRouteAScope(route)) ? '/index' : '')
+    ('#' + route).sub(templates_path.sub(/\s*\(.+\)$/, ''), '') + ((route != templates_path && isRouteAScope(route)) ? '/index' : '')
   end
 
   def angularRouteFilePath(route)
