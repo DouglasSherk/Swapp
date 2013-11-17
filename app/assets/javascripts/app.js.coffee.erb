@@ -31,6 +31,9 @@ App.run ['$rootScope', '$location', \
   $rootScope.mainMenuLinkClick = ->
     $rootScope._showMenu = !$rootScope._showMenu
 
+  $rootScope.menuItemClick = ->
+    $rootScope._showMenu = false
+
   $rootScope.menuShouldShow = ->
     return $rootScope._showMenu
 

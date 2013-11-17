@@ -49,7 +49,7 @@
     <div class="navbar navbar-default navbar-fixed-top fuckme" data-ng-class="{'active': menuShouldShow()}">
       <ul class="nav navbar-nav">
         <li ng-class="{'active': isActiveMenu(menuItem.link)}" ng-repeat="menuItem in menuItems">
-          <a href="#{{ menuItem.link }}">{{ menuItem.name }}</a>
+          <a href="#{{ menuItem.link }}" data-ng-click="menuItemClick()">{{ menuItem.name }}</a>
         </li>
       </ul>
     </div>
