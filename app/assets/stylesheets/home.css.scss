@@ -59,6 +59,10 @@ body {
 	border-left: 10px solid purple;
 }
 
+.notification {
+  border-left: 10px solid #776633;
+}
+
 #mainMenuLink {
   @include transition();
 
@@ -316,10 +320,21 @@ h2 .glyphicon{
   font-weight: 400;
 }
 
+.cat__not {
+  font-size: 80%;
+  float: none !important;
+  padding: 0;
+}
 
+.cat__date {
+  font-size: 70%;
+  color: #777;
+}
 
-
-
+.notifications .waste-category {
+  height: auto;
+  padding: 20px;
+}
 
 #main {
   @include transition();
