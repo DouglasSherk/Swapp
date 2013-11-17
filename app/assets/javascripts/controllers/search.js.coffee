@@ -10,7 +10,7 @@ App.controller 'SearchCtrl', ['$scope', 'WasteItems', ($scope, WasteItems) ->
   $scope.icon = {
     'Garbage': 'fa-trash-o',
     'Recyclable': 'fa-refresh',
-    'Hazardous Waste': 'fa-exclaimation',
+    'Hazardous Waste': 'fa-exclamation',
     'Yard Waste': 'fa-leaf',
     'Drop-off': 'fa-truck',
   }

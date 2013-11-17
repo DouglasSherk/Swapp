@@ -33,7 +33,7 @@
           <li class="item-result" ng-repeat="item in items | filter:matchQuery" ng-click="navigate()">
             {{ item.name }}
             <div class="pull-right">
-              <i class="fa {{ icon[item.category] }}"></i>
+              <i class="fa fa-fw {{ icon[item.category] }}"></i>
               <i class="fa fa-chevron-right"></i>
             </div>
           </li>
