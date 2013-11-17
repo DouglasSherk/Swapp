@@ -43,6 +43,8 @@ gem 'font-awesome-rails', github: 'bokmann/font-awesome-rails'
 
 gem 'angularjs-rails'
 
+gem 'rubyzip'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

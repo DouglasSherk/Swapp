@@ -64,6 +64,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     pg (0.17.0)
+    pg (0.17.0-x86-mingw32)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -84,6 +85,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    rubyzip (1.1.0)
     sass (3.2.12)
     sass-rails (4.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -130,6 +132,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.0)
+  rubyzip
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
