@@ -63,5 +63,10 @@ $('body').on 'touchmove', (e) ->
 $('.scrollable').bind 'touchmove', (e) ->
   e.stopPropagation()
 
+$(document).ready ->
+  setTimeout (->
+    $('.truck').addClass('active')
+  ), 10
+
 #document.body.addEventListener 'touchmove', (e) ->
 #  e.preventDefault()

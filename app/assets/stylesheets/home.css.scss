@@ -395,6 +395,13 @@ h2 .glyphicon{
   position: relative;
   top: -36px;
   left: 142px;
+  @include transition();
+  @include transform(-200px, 0);
+  opacity: 0;
+  &.active {
+    opacity: 1;
+    @include transform(0, 0);
+  }
 }
 
 .home-alert {
