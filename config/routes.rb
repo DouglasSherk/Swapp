@@ -9,6 +9,7 @@ Swapp::Application.routes.draw do
     get 'contact' => 'home#index', :as => 'templates_contact'
     get 'calendar' => 'home#index', :as => 'templates_calendar'
     get 'notifications' => 'home#index', :as => 'templates_notifications'
+    get 'settings' => 'home#index', :as => 'templates_settings'
     get 'collections/:id' => 'home#index', :as => 'templates_collections'
   end
 
