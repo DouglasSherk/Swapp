@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="waste-category-list col-sm-6 col-sm-offset-3 {{ cat.id }} hide">
+      <div class="waste-category-list col-sm-6 col-sm-offset-3 {{ cat.id }} {{ expand != cat.id && 'hide' }}">
         <ul ng-repeat="item in itemsByCategory[cat.name]">
           <li>{{ item }}</li>
         </ul>

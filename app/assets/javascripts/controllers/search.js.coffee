@@ -1,4 +1,6 @@
-App.controller 'SearchCtrl', ['$scope', 'WasteItems', ($scope, WasteItems) ->
+App.controller 'SearchCtrl', ['$scope', '$location', 'WasteItems', ($scope, $location, WasteItems) ->
+  $scope.expand = $location.search().expand
+
   $scope.categories = [
     {name: 'Garbage', id: 'garbage'}
     {name: 'Recyclable', id: 'recycle'}

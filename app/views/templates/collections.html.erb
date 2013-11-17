@@ -2,4 +2,13 @@
   <div ng-show="collectionType == 'Recyclable'">
     <%= render :partial => 'templates/recycle' %>
   </div>
+  <div ng-show="collectionType == 'Garbage'">
+    <%= render :partial => 'templates/garbage' %>
+  </div>
+  <div ng-show="collectionType == 'Hazardous Waste'">
+    <%= render :partial => 'templates/hazard' %>
+  </div>
+  <div ng-show="collectionType == 'Yard Waste'">
+    <%= render :partial => 'templates/yard' %>
+  </div>
 </div>
