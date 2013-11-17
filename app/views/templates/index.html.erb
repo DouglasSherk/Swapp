@@ -29,14 +29,14 @@
   </div>
   <div ng-show="submitted">
     <div class="row" id="map-overlay">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3">
-        <button class="btn btn-default" ng-click="submitted = false">Back</button>
+      <div style="display: table; width: 100%;">
+        <div style="display: table-cell; width: 50%; padding-left: 30px;">
+          <button class="btn btn-default" ng-click="submitted = false">Back</button>
+        </div>
+        <div style="display: table-cell; width: 50%; padding-right: 30px;" class="right">
+          <button class="btn btn-primary" ng-click="finish()">Save</button>
+        </div>
       </div>
-      <div class="col-sm-3 right">
-        <button class="btn btn-primary" ng-click="finish()">Save</button>
-      </div>
-      <div class="col-sm-3"></div>
     </div>
     <div class="row">
       <div class="col-sm-3"></div>
