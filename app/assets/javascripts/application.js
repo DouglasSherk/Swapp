@@ -16,6 +16,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require app
 //= require_tree .
 //= require_self
 //
