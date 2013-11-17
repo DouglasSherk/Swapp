@@ -17,44 +17,38 @@ body {
 	padding-bottom: 2em;
 }
 
-.garbage {
+.waste-category {
 	background: #F2F4F4;
-	border-left: 10px solid black;
-	height: 5em;
-	padding-top: 1.5em;
+	height: 3.5em;
+	padding-top: 1em;
 	padding-left: 2em;
 	font-size: 1.25em;
 	margin-top: 0.5em;
+}
+
+.waste-category-list {
+	background: #f2f4f4;
+	padding: 10px;
+}
+
+.garbage {
+	border-left: 10px solid black;
 }
 
 .hazard {
-	background: #F2F4F4;
 	border-left: 10px solid orange;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em;
-	font-size: 1.25em;
-	margin-top: 0.5em;
 }
 
 .recycle {
-	background: #F2F4F4;
 	border-left: 10px solid blue;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em;
-	font-size: 1.25em;
-	margin-top: 0.5em;
 }
 
 .yard {
-	background: #F2F4F4;
 	border-left: 10px solid green;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em;
-	font-size: 1.25em;
-	margin-top: 0.5em;
+}
+
+.dropoff {
+	border-left: 10px solid purple;
 }
 
 #mainMenuLink {

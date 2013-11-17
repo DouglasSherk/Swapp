@@ -31,3 +31,21 @@
 button.submit {
   width: 100px;
 }
+
+.waste-category {
+  cursor: pointer;
+}
+
+#item-search {
+  padding-left: 0;
+
+  li {
+    padding: 10px;
+    background: #F2F4F4;
+    list-style: none;
+  }
+}
+
+.item-result {
+  cursor: pointer;
+}
