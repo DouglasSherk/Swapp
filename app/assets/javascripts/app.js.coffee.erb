@@ -13,8 +13,8 @@ App.config ['$routeProvider', ($routeProvider) ->
     reloadOnSearch: false,
 ]
 
-App.run ['$rootScope', '$location', \
-         ($rootScope, $location) ->
+App.run ['$rootScope', '$location', 'Settings', \
+         ($rootScope, $location, Settings) ->
   $rootScope.menuItems = [
     {name: 'Pickups', link: '/pickups'},
     {name: 'Calendar', link: '/calendar'},
@@ -24,6 +24,12 @@ App.run ['$rootScope', '$location', \
     {name: 'Contact', link: '/contact'},
     {name: 'Settings', link: '/settings'}
   ]
+
+  $rootScope.unread = ->
+    unread = 0
+    for note in Settings.notifications
+      unread += 1 if !note.read
+    unread
 
   $rootScope.isActiveMenu = (path) ->
     return $location.path().indexOf(path) == 0 ||
