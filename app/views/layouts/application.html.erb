@@ -2,6 +2,7 @@
 <html data-ng-app="Swapp">
 <head>
   <title>Stratford Waste App</title>
+
   <% if Rails.env.phonegap? || Rails.env.phonegap_staging? %>
     <% # XXX: These will have already been minified by the PhoneGap build path. %>
     <link href="css/application.css" media="all" rel="stylesheet" />
@@ -25,6 +26,8 @@
       </script>
     <% end %>
   <% end %>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 
   <meta name="HandheldFriendly" content="true" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">

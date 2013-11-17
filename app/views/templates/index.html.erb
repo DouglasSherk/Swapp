@@ -1,5 +1,5 @@
 <div id="main" class="container" data-ng-controller="HomeCtrl">
-  <div class="center">
+  <div class="center" ng-hide="submitted">
     <h1>Swapp</h1>
 
     <br />
@@ -8,7 +8,7 @@
       <div class="col-sm-3"></div>
       <div id="location" class="col-sm-6">
         <button class="btn btn-success" ng-click="locate()"><i class="fa fa-location-arrow"></i> Use my location</button>
-        <input class="form-control" type="text" placeholder="123 Main Street"></input>
+        <input class="form-control" type="text" placeholder="Or enter your address here..."></input>
       </div>
       <div class="col-sm-3"></div>
     </div>
@@ -19,6 +19,25 @@
       <div class="col-sm-3"></div>
       <div class="col-sm-6">
         <button class="submit btn btn-primary" ng-click="submit()">Submit</button>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+  </div>
+  <div ng-show="submitted">
+    <div class="row" id="map-overlay">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3">
+        <button class="btn btn-default" ng-click="submitted = false">Back</button>
+      </div>
+      <div class="col-sm-3 right">
+        <button class="btn btn-primary" ng-click="finish()">Save</button>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3"></div>
+      <div class="col-sm-6">
+        <div id="map-canvas" />
       </div>
       <div class="col-sm-3"></div>
     </div>
