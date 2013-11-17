@@ -1,3 +1,6 @@
+@import 'constants';
+@import 'utilities';
+
 body {
 	padding-top: 5em;
 	overflow-y: scroll;
@@ -54,42 +57,134 @@ body {
 	margin-top: 0.5em;
 }
 
-.garbagetype {
-	background: black;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em; 
-	font-size: 1.25em;
-	margin-top: 0.5em;
-	color: white;
+#mainMenuLink {
+  @include transition();
+
+  z-index: 1004;
+
+  &:link, &:visited, &:hover, &:active {
+    color: #eee;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.9);
+  }
+
+  position: fixed;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+
+  i {
+    width: auto;
+  }
+
+  &.active {
+    // This doesn't show up on anything other than handhelds and mobile.
+    @include transform($nav-width-handhelds, 0);
+    @include respond-to(tablets) { @include transform($nav-width-tablets, 0); }
+  }
 }
 
-.hazardtype {
-	background: orange;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em; 
-	font-size: 1.25em;
-	margin-top: 0.5em;
-	color: white;
+.nav {
+  @include transition();
+
+  left: 0;
+
+  padding-top: $body-margin;
+  z-index: 1004;
+  @include transform($nav-width-desktops, 0);
+  background: #191818;
+
+  ul {
+    border-top: 1px solid #333;
+  }
+
+  @include respond-to(handhelds) {
+    @include transform(0, 0);
+    &.active {
+      @include transform($nav-width-handhelds, 0);
+    }
+  }
+
+  @include respond-to(tablets) {
+    @include transform(0, 0);
+    &.active {
+      @include transform($nav-width-tablets, 0);
+    }
+  }
 }
 
-.recycletype {
-	background: blue;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em; 
-	font-size: 1.25em;
-	margin-top: 0.5em;
-	color: white;
-}
+.nav {
+  margin-left: -$nav-width-desktops;
+  width: $nav-width-desktops;
 
-.yardtype {
-	background: green;
-	height: 5em;
-	padding-top: 1.5em;
-	padding-left: 2em; 
-	font-size: 1.25em;
-	margin-top: 0.5em;
-	color: white;
+  @include respond-to(handhelds) { width: $nav-width-handhelds; margin-left: -$nav-width-handhelds; }
+  @include respond-to(tablets) { width: $nav-width-tablets; margin-left: -$nav-width-tablets; }
+  @include respond-to(desktops) { width: $nav-width-desktops; margin-left: -$nav-width-desktops }
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scroll: touch;
+
+  a { width: 100% !important; }
+
+  li {
+    width: 100% !important;
+  }
+
+  ul {
+    li {
+      font-size: 100%;
+      @include respond-to(tablets) { font-size: 125%; }
+
+      a:hover {
+        background-color: #333;
+      }
+
+      &.menu-item-divided {
+        border-top: 1px solid #333;
+      }
+
+      &.pure-menu-selected, &.pure-menu-selected a:hover {
+        background: #1f8dd6;
+        a {
+          color: #fff;
+        }
+      }
+
+      i {
+        float: right;
+        margin-right: 0.6em;
+        line-height: inherit;
+      }
+    }
+
+    background: transparent;
+    border: 0;
+    color: #999;
+
+    .pure-menu-heading {
+      font-size: 125%;
+      @include respond-to(tablets) { font-size: 140%; }
+
+      color: #fff;
+      text-transform: none;
+      padding: 0 0 0 0.43em;
+      margin: 0;
+      line-height: 50px;
+      height: 50px;
+    }
+
+    a {
+      border: none;
+      white-space: normal;
+      padding: 0.6em 0 0.6em 0.6em;
+      color: #aaa;
+    }
+  }
 }
