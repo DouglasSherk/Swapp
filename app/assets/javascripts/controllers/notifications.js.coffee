@@ -13,6 +13,10 @@ App.controller 'NotificationsCtrl', ['$scope', 'Settings', ($scope, Settings) ->
       Settings.save()
     , 2000
 
+  $scope.$on '$destroy', ->
+    $scope.markRead()
+    Settings.save()
+
   $scope.clear = ->
     angular.copy([], $scope.notifications)
     Settings.save()
