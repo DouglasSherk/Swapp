@@ -46,6 +46,7 @@
       <div class="container">
         <div class="center nav__title" style="position: absolute; top: 13px; left: 0; right: 0; width: 100%; font-size: 1.5em;">{{ title }}</div>
         <a class="navbar-brand pretty" ng-if="showEdit()" style="position: absolute; top: 0; right: 10px;" href="#/edit">Edit</a>
+        <a class="navbar-brand pretty" ng-if="showBack()" data-ng-click="back()" style="position: absolute; top: 0; right: 10px;" href="">Back</a>
         <a class="navbar-brand pretty" ng-if="showSave()" style="position: absolute; top: 0; right: 10px;" href="#/pickups">Save</a>
         <div class="navbar-header" style="position: relative;">
           <div class="notification-count" style="position: absolute; top: 8px; left: 32px; color: #db4c4c; z-index: 999"
