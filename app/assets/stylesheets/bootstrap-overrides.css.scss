@@ -5,6 +5,11 @@
 body {
   .navbar-nav { margin: 0; }
 
+  .navbar-form {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   font-family: 'ProximaNova', 'Helvetica Neue', sans-serif;
   font-size: 15px;
   @include respond-to(handhelds) { font-size: 12px; }
